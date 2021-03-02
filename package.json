@@ -1,0 +1,24 @@
+{
+  "name": "employee-tracker-sql",
+  "version": "1.0.0",
+  "description": "Node Inquirer app to view and manage the departments, roles, and employees in a company so that you can organize and plan your business.",
+  "main": "employeeTracker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JodyBrzo/employee-tracker-sql.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JodyBrzo/employee-tracker-sql/issues"
+  },
+  "homepage": "https://github.com/JodyBrzo/employee-tracker-sql#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0",
+    "npm": "^7.6.0",
+    "start": "^5.1.0"
+  }
+}
