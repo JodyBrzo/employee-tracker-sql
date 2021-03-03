@@ -28,7 +28,7 @@ From the command line change directory to where you cloned this repo to then typ
 # Usage
 Check out my [video tutorial]( https://drive.google.com/file/d/1ipxTHQaCM2ZmK6PvqwCKg5Y_Kmngwc5k/view) for a complete walkthrough of this app.
 
-### All required functionality includes
+### Complete Required Functionality Includes
 * View All Departments
 * View All Roles
 * View All Employees
