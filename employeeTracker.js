@@ -204,6 +204,4 @@ const updateEmployeeRole = () => {
             });
         });    
     });
-
-
 }
