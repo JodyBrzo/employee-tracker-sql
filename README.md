@@ -28,14 +28,14 @@ From the command line change directory to where you cloned this repo to then typ
 # Usage
 Check out my [video tutorial]( https://drive.google.com/file/d/1ipxTHQaCM2ZmK6PvqwCKg5Y_Kmngwc5k/view) for a complete walkthrough of this app.
 
-All required functionality includes
-    * View All Departments
-    * View All Roles
-    * View All Employees
-    * Add Role
-    * Add Department
-    * Add Employee
-    * Remove Employee
+### All required functionality includes
+* View All Departments
+* View All Roles
+* View All Employees
+* Add Role
+* Add Department
+* Add Employee
+* Remove Employee
 
 Using the above questions you can add the command-line application will allow you to add departments, roles and employees, view departments, roles, and employees and Update employee roles.  Viewing all employees will return the full dataset of id, First Name, Last Name, Title, Department, Salary and Manager.
 
