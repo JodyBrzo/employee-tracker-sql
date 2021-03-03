@@ -70,7 +70,7 @@ const viewAllDepartments = () => {
 };
 
 const viewAllRoles = () => {
-    connection.query(`SELECT * FROM role;`,(err, res) => {
+    connection.query(`SELECT * FROM role`,(err, res) => {
         console.table(res); 
         questions();
     }); 
@@ -98,7 +98,7 @@ const addADepartment = () => {
         }
     ])
     .then((answer) => {
-        let sql =     `INSERT INTO department (name) VALUES (?)`;
+        let sql = `INSERT INTO department (name) VALUES (?)`;
         connection.query(sql, answer.addDepartment, (err, res) => {
         viewAllDepartments();
         });
@@ -148,4 +148,62 @@ const addARole = () => {
             }
           });
     });
+}
+
+const updateEmployeeRole = () => {
+//query database for employee list       
+    let employees = [];
+    let roles = [];
+
+    connection.query(`SELECT * FROM employee`, (err, res) => {
+        res.forEach((employee) => {
+            employees.push ({
+            "value": employee.id,
+            "name": employee.first_name + " " + employee.last_name
+            });
+        });
+
+        //query database for role list
+        connection.query(`SELECT * FROM role`, (err, res) => {
+            res.forEach((role) => {
+                roles.push ({
+                "value": role.id,
+                "name": role.title
+                });
+            });
+
+            //inquirer for which employee would you like to update
+            inquirer
+            .prompt([
+                {
+                    type:"list",
+                    name:"employee",
+                    message:"choose an employee you would like to update thier role for?",
+                    choices: employees,
+                },
+                {
+                    type:"list",
+                    name:"role",
+                    message:"Choose a new role for this employee.",
+                    choices: roles,
+                }
+            ])
+
+            .then((answer) => {
+
+                employees.forEach((employee) => {
+                    if (employee.value === answer.employee) 
+                    {
+                        let sql = `UPDATE employee Set employee.role_id = ? WHERE employee.id = ?`;
+                        connection.query(sql, [answer.role, answer.employee], (err, res) => {
+                            viewAllEmployees();
+                        });
+                        //call view all employees
+                    }
+                });
+            });
+        });    
+    });
+
+
 }
